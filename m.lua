@@ -10,8 +10,11 @@ local SkinsData = HTTPService:JSONDecode(SkinDataDump)
 local SkinVariants = ReplicatedStorage:WaitForChild("Storage"):WaitForChild("SkinVariants")
 local LocalPlayer = PlayerService.LocalPlayer
 
-local success, decoded = pcall(HTTPService.JSONDecode, HTTPService, readfile('STA.json'))
-local SkinsToApply = success and decoded or {}
+local decoded = nil
+local success = pcall(function()
+    decoded = HTTPService:JSONDecode(readfile('STA.json'))
+end)
+local SkinsToApply = decoded or {}
 
 local function getsynassetfromurl(URL)
 	local getsynasset, request = getsynasset or getcustomasset or error('invalid attempt to \'getsynassetfromurl\' (custom asset retrieval function expected)'), (syn and syn.request) or (http and http.request) or (request) or error('invalid attempt to \'getsynassetfromurl\' (http request function expected)')
@@ -136,8 +139,11 @@ local Instances = {
 }
 
 local Killtrack = false
-local success, decoded = pcall(HTTPService.JSONDecode, HTTPService, readfile('KT_COUNTS.json'))
-local KillTrackKills = success and decoded or {}
+local decoded = nil
+pcall(function()
+    decoded = HTTPService:JSONDecode(readfile('KT_COUNTS.json'))
+end)
+local KillTrackKills = decoded or {}
 
 local function SharedItemNameCheck(itemName)
 	local t =  {
