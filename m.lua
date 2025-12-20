@@ -810,6 +810,11 @@ local function CreateNewApplySkin(SkinName)
 	end
 	Frames[WeaponToApply][SkinName] = NewSkinFrame
 
+	local ApplysSkins =  SkinsToApply[WeaponToApply]
+	if ApplysSkins then
+		NewSkinFrame.ToggleFrame.ImageColor3 = Color3.fromRGB(26, 255, 0)
+	end
+
 	TextButton.MouseButton1Click:Connect(function()
 		SkinsToApply[WeaponToApply] = SkinName
 		writefile('STA.json', HTTPService:JSONEncode(SkinsToApply))
