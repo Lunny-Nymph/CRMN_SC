@@ -12,7 +12,7 @@ local LocalPlayer = PlayerService.LocalPlayer
 
 local decoded = nil
 local success = pcall(function()
-    decoded = HTTPService:JSONDecode(readfile('STA.json'))
+	decoded = HTTPService:JSONDecode(readfile('STA.json'))
 end)
 local SkinsToApply = decoded or {}
 
@@ -58,7 +58,7 @@ if getgenv().CustomsSkins then
 			local idtexture = getsynassetfromurl(Skin.Texture)
 			Skin.Skin.SurfaceAppearance.ColorMap = idtexture
 			Skin.Data.TextureID = idtexture
-                        warn(idtexture)
+			warn(idtexture)
 
 		end
 		Skins[skinname] = Skin.Skin
@@ -141,7 +141,7 @@ local Instances = {
 local Killtrack = false
 local decoded = nil
 pcall(function()
-    decoded = HTTPService:JSONDecode(readfile('KT_COUNTS.json'))
+	decoded = HTTPService:JSONDecode(readfile('KT_COUNTS.json'))
 end)
 local KillTrackKills = decoded or {}
 
@@ -420,11 +420,14 @@ local function ApplyCustomGlockIronSight(Tool, SkinName)
 	local RearSightColorPart = Tool:FindFirstChild('RearSightColorPart', true)
 
 	local function ApplyColorNMaterial(Color, Material )
-		FrontSightColorPart.Color = Color
-		RearSightColorPart.Color = Color
-
-		FrontSightColorPart.Material = Material
-		RearSightColorPart.Material = Material
+		if FrontSightColorPart then
+			FrontSightColorPart.Color = Color
+			FrontSightColorPart.Material = Material
+		end
+		if 	RearSightColorPart then
+			RearSightColorPart.Color = Color
+			RearSightColorPart.Material = Material
+		end
 	end
 
 	if SkinName == 'g17_yosei' then
@@ -744,10 +747,12 @@ local function ApplySkin(Tool, SkinToApply)
 		local id = math.random(100000,9999999)
 		SA.Name = tostring(id)
 		SA.Parent = Tool
-		Tool:SetAttribute('AppliedSkinPBR_ID', id)
+		if Tool then
+			Tool:SetAttribute('AppliedSkinPBR_ID', id)
+		end
 	end
 
-	if Killtrack and not Tool:GetAttribute('HasKilltrack') then
+	if Killtrack and Tool and not Tool:GetAttribute('HasKilltrack') then
 		Tool:GetAttribute('KT_Kills', KillTrackKills[Tool.Name] or 0)
 		require(ReplicatedStorage.NewModules.Shared.Extensions.AddKillTrackModel)(Tool, LocalPlayer)
 	elseif Killtrack then
