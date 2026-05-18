@@ -49,9 +49,9 @@ return {
 		SwimAnimation = 973772659,
 		WalkAnimation = 973767371,
 		Accessories = {
-			{ AssetId = 18418395303, AccessoryType = Enum.AccessoryType.Hat, IsLayered = false, Order = 0, Puffiness = 0 },
+			{ AssetId = 18418395303, AccessoryType = Enum.AccessoryType.Hat, IsLayered = true, Order = 0, Puffiness = 0 },
 			{ AssetId = 102009338992095, AccessoryType = Enum.AccessoryType.Hair, IsLayered = true, Order = 13, Puffiness = 1 },
-			{ AssetId = 109122262706835, AccessoryType = Enum.AccessoryType.Hat, IsLayered = false, Order = 0, Puffiness = 0 },
+			{ AssetId = 109122262706835, AccessoryType = Enum.AccessoryType.Hat, IsLayered = true, Order = 0, Puffiness = 0 },
 		},
 		HeadColor = Color3.fromRGB(215, 197, 154),
 		TorsoColor = Color3.fromRGB(215, 197, 154),
