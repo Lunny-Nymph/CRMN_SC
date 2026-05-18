@@ -26,7 +26,7 @@ return {
 		RightLegColor = Color3.fromRGB(249, 249, 249),
 	},
 	
-	[13] = {
+	[10962863464] = {
 		BodyTypeScale = 0,
 		ProportionScale = 0,
 		HeightScale = 1,
