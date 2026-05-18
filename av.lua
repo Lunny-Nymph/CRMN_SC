@@ -7,17 +7,21 @@ return {
 		WidthScale = 1,
 		HeadScale = 1,
 		DepthScale = 1,
-
-		Shirt  = 121132030626744,
-		Pants  = 112334704915099,
-		Torso  = 48474356,
-
-		FaceAccessory  = "96612178366749,13399898495",
-		HairAccessory  = "12850630072,116788699891272,17274655265,10323360626",
-		HatAccessory   = "15772501759",
-		NeckAccessory  = "17010945991,105280197073759",
-		WaistAccessory = "13632154889",
-
+		Shirt = 121132030626744,
+		Pants = 112334704915099,
+		Torso = 48474356,
+		Accessories = {
+			{ AssetId = 96612178366749,  AccessoryType = Enum.AccessoryType.Face,  IsLayered = false, Order = 0, Puffiness = 0 },
+			{ AssetId = 13399898495,     AccessoryType = Enum.AccessoryType.Face,  IsLayered = false, Order = 0, Puffiness = 0 },
+			{ AssetId = 12850630072,     AccessoryType = Enum.AccessoryType.Hair,  IsLayered = false, Order = 0, Puffiness = 0 },
+			{ AssetId = 116788699891272, AccessoryType = Enum.AccessoryType.Hair,  IsLayered = false, Order = 0, Puffiness = 0 },
+			{ AssetId = 17274655265,     AccessoryType = Enum.AccessoryType.Hair,  IsLayered = false, Order = 0, Puffiness = 0 },
+			{ AssetId = 10323360626,     AccessoryType = Enum.AccessoryType.Hair,  IsLayered = false, Order = 0, Puffiness = 0 },
+			{ AssetId = 15772501759,     AccessoryType = Enum.AccessoryType.Hat,   IsLayered = false, Order = 0, Puffiness = 0 },
+			{ AssetId = 17010945991,     AccessoryType = Enum.AccessoryType.Neck,  IsLayered = false, Order = 0, Puffiness = 0 },
+			{ AssetId = 105280197073759, AccessoryType = Enum.AccessoryType.Neck,  IsLayered = false, Order = 0, Puffiness = 0 },
+			{ AssetId = 13632154889,     AccessoryType = Enum.AccessoryType.Waist, IsLayered = false, Order = 0, Puffiness = 0 },
+		},
 		HeadColor     = Color3.fromRGB(249, 249, 249),
 		TorsoColor    = Color3.fromRGB(249, 249, 249),
 		LeftArmColor  = Color3.fromRGB(249, 249, 249),
@@ -25,7 +29,7 @@ return {
 		LeftLegColor  = Color3.fromRGB(249, 249, 249),
 		RightLegColor = Color3.fromRGB(249, 249, 249),
 	},
-	
+
 	[10962863464] = {
 		BodyTypeScale = 0,
 		ProportionScale = 0,
@@ -33,12 +37,10 @@ return {
 		WidthScale = 1,
 		HeadScale = 1,
 		DepthScale = 1,
-		
 		Head = 87337809867327,
 		Torso = 48474356,
 		Shirt = 6903572692,
 		Pants = 7108200232,
-		
 		ClimbAnimation = 973773170,
 		FallAnimation = 973768058,
 		IdleAnimation = 973771666,
@@ -46,13 +48,16 @@ return {
 		RunAnimation = 973766674,
 		SwimAnimation = 973772659,
 		WalkAnimation = 973767371,
-		
-		HatAccessory = "18418395303,109122262706835",
+		Accessories = {
+			{ AssetId = 18418395303, AccessoryType = Enum.AccessoryType.Hat, IsLayered = false, Order = 0, Puffiness = 0 },
+			{ AssetId = 102009338992095, AccessoryType = Enum.AccessoryType.Hair, IsLayered = true, Order = 13, Puffiness = 1 },
+			{ AssetId = 109122262706835, AccessoryType = Enum.AccessoryType.Hat, IsLayered = false, Order = 0, Puffiness = 0 },
+		},
 		HeadColor = Color3.fromRGB(215, 197, 154),
 		TorsoColor = Color3.fromRGB(215, 197, 154),
 		LeftArmColor = Color3.fromRGB(215, 197, 154),
 		RightArmColor = Color3.fromRGB(215, 197, 154),
 		LeftLegColor = Color3.fromRGB(215, 197, 154),
 		RightLegColor = Color3.fromRGB(215, 197, 154),
-	}
+	},
 }
